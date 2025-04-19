@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <!-- Bootsrap 5 Latest compiled and minified CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {{!-- header --}}
+    <div class="bg-light">
+        <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
+            <div class="container-fluid">
+
+                <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <a class="navbar-brand" href="#">
+                    DAVIDCY360
+                </a>
+
+                <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Wishlist</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About us</a>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                                aria-expanded="false">SUITS</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                <li><a class="dropdown-item" href="#">Coat</a></li>
+                                <li><a class="dropdown-item" href="#">Coporate/Business</a></li>
+                                <li><a class="dropdown-item" href="#">Dinner</a></li>
+                                <li><a class="dropdown-item" href="#">Graduation</a></li>
+                                <li><a class="dropdown-item" href="#">Party</a></li>
+                                <li><a class="dropdown-item" href="#">Prom</a></li>
+                                <li><a class="dropdown-item" href="#">Wedding</a></li>
+                                <li><a class="dropdown-item" href="#">Groomsmen</a></li>
+                                <li><a class="dropdown-item" href="#">See All SUITS </a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                                aria-expanded="false">NATIVES</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                <li><a class="dropdown-item" href="#">Agbada</a></li>
+                                <li><a class="dropdown-item" href="#">Aso Oke - Agbada</a></li>
+                                <li><a class="dropdown-item" href="#">Dashiki</a></li>
+                                <li><a class="dropdown-item" href="#">Kaftan</a></li>
+                                <li><a class="dropdown-item" href="#">See All Natives</a></li>
+                                <li><a class="dropdown-item" href="#">See All NATIVES </a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                                aria-expanded="false">SHIRTS</a>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                <li><a class="dropdown-item" href="#">Casual Shirts</a></li>
+                                <li><a class="dropdown-item" href="#">Dress Shirt</a></li>
+                                <li><a class="dropdown-item" href="#">Denim Shirts</a></li>
+                                <li><a class="dropdown-item" href="#">Evening Shirts</a></li>
+                                <li><a class="dropdown-item" href="#">Polo Shirts</a></li>
+                                <li><a class="dropdown-item" href="#">T-shirt & Sweatshirt</a></li>
+                                <li><a class="dropdown-item" href="#">Leather</a></li>
+                                <li><a class="dropdown-item" href="#">See All Shirts</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-bs-toggle="dropdown"
+                                aria-expanded="false">PANTS</a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                                <li><a class="dropdown-item" href="#">Ceremonial</a></li>
+                                <li><a class="dropdown-item" href="#">Combat</a></li>
+                                <li><a class="dropdown-item" href="#">Draw String</a></li>
+                                <li><a class="dropdown-item" href="#">Denim</a></li>
+                                <li><a class="dropdown-item" href="#">Gurkha</a></li>
+                                <li><a class="dropdown-item" href="#">Joggers</a></li>
+                                <li><a class="dropdown-item" href="#">Tuxedo</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+
+                <a class="navbar-brand">
+                    <div class="d-flex flex-row">
+                        <div class="me-4" style="cursor: pointer;">
+                            <img src="/assets/icons/shopping-cart.png" alt="profile" width="25px">
+
+                            <span class="badge bg-light text-dark rounded-pill align-text-bottom">0</span>
+                        </div>
+
+                        <div class="mx-0" onclick="openUserPage()" style="cursor: pointer;">
+                            <img src=" /assets/icons/user.png" alt="search-icon" width="25px">
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </nav>
+
+        <div class="nav-scroller bg-body shadow-sm px-3">
+            <nav class="nav nav-underline" aria-label="Secondary navigation">
+                <a class="nav-link" href="#">Accessibility</a>
+                <a class="nav-link" href="#">Perferct Fit Guide</a>
+                <a class="nav-link" href="#">Shipping & Delivery</a>
+                <a class="nav-link" href="#">FAQs</a>
+                <a class="nav-link" href="#">About</a>
+            </nav>
+        </div>
+    </div>
+
+    {{!-- carousel --}}
+    <div style="width: 100vw;">
+        {{!-- <img src="assets/images/suits-supply-background-jpg.jpg" id="front-page-image"> --}}
+
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" style="position: relative;">
+                    <img src="assets/images/suits-supply-background-jpg.jpg" id="front-page-image" class="d-block w-100"
+                        alt="...">
+                    <div class="carousel-caption d-none d-md-block" style="margin-bottom: 120px;">
+                        <h2 class="fw-bold ">Suits</h2>
+                        <h1 class="fw-bold">Own Your Style</h1>
+                        <button class="btn btn-light">Shop Now</button>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/suits-supply-background-jpg.jpg" id="front-page-image" class="d-block w-100"
+                        alt="...">
+                    <div class="carousel-caption d-none d-md-block" style="margin-bottom: 120px;">
+                        <h2 class="fw-bold ">Natives</h2>
+                        <h1 class="fw-bold">Pure Outstanding Creativity</h1>
+                        <button class="btn btn-warning">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+
+
+    {{!-- hot products --}}
+    <div style="width: 100vw;" class="bg-light py-5">
+
+        <div class="f-r-header  pt-3">
+            Hot Products
+        </div>
+
+        <div class="featured-row px-3 py-3 bg-light">
+            <div class="f-r-content">
+                <div class="f-r-image">
+                    <img src="assets/images/cl-4.jpg" style="width: 100%; height:225px;">
+                </div>
+                <div class="f-r-body">
+                    <div class="f-r-body-1">
+                        A Navy Blue, Herringbone Nobility Super “140s” “Board Room” Peak Lapel Suit
+                    </div>
+                    <div class="f-r-body-2">
+                        <div class="f-r-body-2-1">
+                            <div style="cursor: pointer;">
+                                <img src="/assets/icons/heart-outline.png" width="20px" />
+                            </div>
+                            <div class="fw-bold">$40,000</div>
+                        </div>
+                        <div class="btn btn-outline-dark btn-sm mt-3">
+                            Add to cart
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="f-r-content">
+                <div class="f-r-image">
+                    <img src="assets/images/cl-1.jpg" style="width: 100%; height:225px;">
+                </div>
+                <div class="f-r-body">
+                    <div class="f-r-body-1">
+                        A Navy Blue, Herringbone Nobility Super “140s” “Board Room” Peak Lapel Suit
+                    </div>
+                    <div class="f-r-body-2">
+                        <div class="f-r-body-2-1">
+                            <div style="cursor: pointer;">
+                                <img src="/assets/icons/heart-outline.png" width="20px" />
+                            </div>
+                            <div class="fw-bold">$40,000</div>
+                        </div>
+                        <div class="btn btn-outline-dark btn-sm mt-3">
+                            Add to cart
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="f-r-content">
+                <div class="f-r-image">
+                    <img src="assets/images/cl-3.jpg" style="width: 100%; height:225px;">
+                </div>
+                <div class="f-r-body">
+                    <div class="f-r-body-1">
+                        A Navy Blue, Herringbone Nobility Super “140s” “Board Room” Peak Lapel Suit
+                    </div>
+                    <div class="f-r-body-2">
+                        <div class="f-r-body-2-1">
+                            <div style="cursor: pointer;">
+                                <img src="/assets/icons/heart-outline.png" width="20px" />
+                            </div>
+                            <div class="fw-bold">$40,000</div>
+                        </div>
+                        <div class="btn btn-outline-dark btn-sm mt-3">
+                            Add to cart
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="f-r-content">
+                <div class="f-r-image">
+                    <img src="assets/images/cl-4.jpg" style="width: 100%; height:225px;">
+                </div>
+                <div class="f-r-body">
+                    <div class="f-r-body-1">
+                        A Navy Blue, Herringbone Nobility Super “140s” “Board Room” Peak Lapel Suit
+                    </div>
+                    <div class="f-r-body-2">
+                        <div class="f-r-body-2-1">
+                            <div style="cursor: pointer;">
+                                <img src="/assets/icons/heart-outline.png" width="20px" />
+                            </div>
+                            <div class="fw-bold">$40,000</div>
+                        </div>
+                        <div class="btn btn-outline-dark btn-sm mt-3">
+                            Add to cart
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="f-r-content">
+                <div class="f-r-image">
+                    <img src="assets/images/cl-4.jpg" style="width: 100%; height:225px;">
+                </div>
+                <div class="f-r-body">
+                    <div class="f-r-body-1">
+                        A Navy Blue, Herringbone Nobility Super “140s” “Board Room” Peak Lapel Suit
+                    </div>
+                    <div class="f-r-body-2">
+                        <div class="f-r-body-2-1">
+                            <div style="cursor: pointer;">
+                                <img src="/assets/icons/heart-outline.png" width="20px" />
+                            </div>
+                            <div class="fw-bold">$40,000</div>
+                        </div>
+                        <div class="btn btn-outline-dark btn-sm mt-3">
+                            Add to cart
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="f-r-content">
+                <div class="f-r-image">
+                    <img src="assets/images/cl-1.jpg" style="width: 100%; height:225px;">
+                </div>
+                <div class="f-r-body">
+                    <div class="f-r-body-1">
+                        A Navy Blue, Herringbone Nobility Super “140s” “Board Room” Peak Lapel Suit
+                    </div>
+                    <div class="f-r-body-2">
+                        <div class="f-r-body-2-1">
+                            <div style="cursor: pointer;">
+                                <img src="/assets/icons/heart-outline.png" width="20px" />
+                            </div>
+                            <div class="fw-bold">$40,000</div>
+                        </div>
+                        <div class="btn btn-outline-dark btn-sm mt-3">
+                            Add to cart
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="d-flex justify-content-center py-4">
+            <div class="btn btn-dark btn-lg ">
+                See More
+            </div>
+        </div>
+    </div>
+
+    <div style="width: 100vw;" class="py-5">
+        <h2 class="px-4 fw-normal lh-1 pt-5 " style="text-align: center;">About Us </h2>
+        <p class="lead mt-4 px-5  d-flex justidy-content-center" style="text-align: center;">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eleifend feugiat purus, eget
+            bibendum lorem egestas accumsan. Donec pharetra ante sit amet lectus pellentesque molestie.
+            Phasellus rhoncus volutpat mi, vel elementum risus efficitur ut. Cras ex turpis, malesuada in
+            iaculis hendrerit, varius vel odio. Nunc vulputate est nec semper varius. Sed vehicula purus eu
+            ipsum laoreet semper. Vivamus nec nisi in erat lacinia pellentesque nec at orci. Quisque interdum et
+            tortor sit amet commodo. Cras mollis velit et elit eleifend feugiat. Quisque varius volutpat
+            egestas. Suspendisse orci lectus, vehicula in gravida et, imperdiet nec mauris.
+        </p>
+
+
+
+
+    </div>
+
+    {{>footer}}
+
+</body>
+
+<!-- Bootsrap 5 Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/js/index.js"></script>
+
+</html>
