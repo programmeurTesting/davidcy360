@@ -1,4 +1,5 @@
 // import { cookieJwtAuth } from './middleware/cookieJwtAuth';
+require('dotenv').config();
 const { cookieJwtAuth, openUserprofile } = require('./middleware/cookieJwtAuth');
 
 const hbs = require('hbs');
@@ -11,19 +12,14 @@ const { ObjectId } = require('mongodb');
 const bcripyt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
-const dotenv = require('dotenv').config();
 
 
 const app = express();
 
-
-// hbs.registerPartials(partialsPath);
-hbs.registerPartials(__dirname + '/Templates/partials'); //for partials
-
-
 const publicDirectoryPath = path.join(__dirname, '../Public');
+console.log(publicDirectoryPath)
 app.use(express.static(publicDirectoryPath));
-app.use(express.static(__dirname + '/public')); //for static css and js files
+app.use(express.static(__dirname + '/Public')); //for static css and js files
 
 app.use('/css', express.static(__dirname + '/Public/css'));
 app.use('/js', express.static(__dirname + '/Public/js'));
@@ -33,7 +29,14 @@ app.use('/img', express.static(__dirname + '/Public/img'));
 app.use(cookieParser());
 app.use(express.json());
 
+// hbs.registerPartials(partialsPath);
+hbs.registerPartials(__dirname + '/Templates/partials'); //for partials
+
+
+
+app.set('views', './src/Views')
 app.set('view engine', 'hbs');
+mongoose.set('strictQuery', false);
 
 
 let port = process.env.PORT || 3000;
