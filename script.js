@@ -14,6 +14,28 @@ const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv').config();
 
 
+const app = express();
+
+
+// hbs.registerPartials(partialsPath);
+hbs.registerPartials(__dirname + '/Templates/partials'); //for partials
+
+
+const publicDirectoryPath = path.join(__dirname, '../Public');
+app.use(express.static(publicDirectoryPath));
+app.use(express.static(__dirname + '/public')); //for static css and js files
+
+app.use('/css', express.static(__dirname + '/Public/css'));
+app.use('/js', express.static(__dirname + '/Public/js'));
+app.use('/img', express.static(__dirname + '/Public/img'));
+
+//to be able to recieve json form frontend
+app.use(cookieParser());
+app.use(express.json());
+
+app.set('view engine', 'hbs');
+
+
 let port = process.env.PORT || 3000;
 
 //database 
@@ -87,20 +109,7 @@ const jwtFunctionSigning = (userLoginDetails) => {
     })
 }
 
-const app = express();
 
-const publicDirectoryPath = path.join(__dirname, '../Public');
-
-// hbs.registerPartials(partialsPath);
-hbs.registerPartials(__dirname + '/Templates/partials'); //for partials
-
-app.use(express.static(publicDirectoryPath));
-app.use(express.static(__dirname + '/public')); //for static css and js files
-app.use(cookieParser());
-app.use(express.json());
-
-
-app.set('view engine', 'hbs');
 
 //hbs template
 
