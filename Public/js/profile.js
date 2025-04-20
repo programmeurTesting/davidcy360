@@ -17,7 +17,7 @@ async function loadUserDetails() {
         .then(data => {
             // console.log(data.data)
             welcomeUserProfile.innerText = `${data.data.firstName}`;
-            userProfileNames.innerHTML = `${data.data.firstName} ${data.data.middleName} ${data.data.lastName}`;
+            userProfileNames.innerHTML = `${data.data.firstName}  ${data.data.lastName}`;
             userProfileEmail.innerHTML = `${data.data.email}`;
 
             //edith profile details for session storage
