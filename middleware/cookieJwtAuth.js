@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const express = require('express');
+const dotenv = require('dotenv').config();
 
 const app = express();
 
@@ -11,7 +12,7 @@ const cookieJwtAuth = (req, res, next) => {
     const token = req.cookies.token;
 
     try {
-        const user = jwt.verify(token, 'thisismynewcourse');
+        const user = jwt.verify(token, process.env.SECRET_KEY);
         // console.log(user);
         req.user = user;
         next();

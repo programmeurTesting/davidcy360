@@ -11,20 +11,20 @@ const { ObjectId } = require('mongodb');
 const bcripyt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const dotenv = require('dotenv').config();
 
 
 let port = process.env.PORT || 3000;
 
 //database 
 const MongoClient = mongodb.MongoClient;
-const connectionUrl = "mongodb://0.0.0.0:27017";
 const databaseName = 'davidcy360africa';
 
 //mongodb custom id
 const objectID = mongodb.ObjectId;
 const id = new objectID();
 
-const uri = 'mongodb://0.0.0.0:27017/davidcy360africa';
+const uri = process.env.MONGODB_URL;
 
 mongoose.connect(uri).then(() => {
     console.log('connected');
